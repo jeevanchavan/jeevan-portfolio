@@ -1,0 +1,111 @@
+.ach-section {
+  background: var(--black);
+  border-top: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.ach-bg-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-head);
+  font-size: clamp(6rem, 18vw, 18rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  color: rgba(242,237,228,0.015);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+.ach-header { margin-bottom: 5rem; }
+
+.ach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.ach-card {
+  background: var(--black-2);
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+.ach-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 2px; height: 0;
+  background: var(--orange);
+  transition: height 0.5s var(--ease-out);
+}
+.ach-card:hover::after { height: 100%; }
+.ach-card:hover { background: var(--black-3); }
+
+.ach-large {
+  grid-column: span 1;
+}
+
+.ach-card-tag {
+  font-family: var(--font-head);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--orange);
+  opacity: 0.8;
+}
+.ach-card-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+.ach-stat-num {
+  font-family: var(--font-head);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--cream);
+  line-height: 1;
+}
+.ach-stat-plus {
+  font-size: 2rem;
+  color: var(--orange);
+}
+.ach-title {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+.ach-desc {
+  font-size: 0.85rem;
+  color: rgba(242,237,228,0.4);
+  font-weight: 300;
+  line-height: 1.7;
+  flex: 1;
+}
+.ach-badge {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  border: 1px solid rgba(255,77,0,0.35);
+  padding: 0.3rem 0.75rem;
+  align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  .ach-grid { grid-template-columns: 1fr; }
+  .ach-bg-text { display: none; }
+}

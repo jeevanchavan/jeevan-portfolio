@@ -1,0 +1,122 @@
+.skills-section {
+  background: var(--black);
+  border-top: 1px solid var(--border);
+}
+.skills-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 5rem;
+}
+.skills-intro {
+  font-size: 1.02rem;
+  font-weight: 300;
+  color: var(--cream-dim);
+  line-height: 1.8;
+  max-width: 400px;
+}
+
+/* Skills grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-bottom: 5rem;
+  border: 1px solid var(--border);
+}
+.skill-group {
+  padding: 2.5rem 2rem;
+  background: var(--black-2);
+  transition: background 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.skill-group:hover { background: var(--black-3); }
+.skill-group-label {
+  font-family: var(--font-head);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1.2rem;
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skill-pill {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(242,237,228,0.6);
+  background: var(--cream-faint);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  transition: all 0.25s;
+  font-family: var(--font-head);
+}
+.skill-pill:hover, .pill-primary {
+  background: var(--orange);
+  color: var(--cream);
+  border-color: var(--orange);
+}
+
+/* MERN showcase */
+.mern-showcase {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  border: 1px solid var(--border);
+  background: var(--border);
+}
+.mern-card {
+  background: var(--black-2);
+  padding: 3rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+.mern-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 2px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out);
+}
+.mern-card:hover::after { transform: scaleX(1); }
+.mern-card:hover { background: var(--black-3); }
+.mern-letter {
+  font-family: var(--font-head);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: rgba(242,237,228,0.06);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s;
+}
+.mern-card:hover .mern-letter { color: var(--orange); opacity: 0.4; }
+.mern-name {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 0.4rem;
+}
+.mern-desc {
+  font-size: 0.78rem;
+  color: rgba(242,237,228,0.35);
+  font-weight: 300;
+}
+
+@media (max-width: 900px) {
+  .skills-header { grid-template-columns: 1fr; gap: 2rem; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .mern-showcase { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .skills-grid { grid-template-columns: 1fr; }
+  .mern-showcase { grid-template-columns: 1fr 1fr; }
+}
