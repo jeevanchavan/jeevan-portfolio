@@ -5,7 +5,7 @@ import './Story.css'
 const timeline = [
   { year: '2023', label: 'The Journey Begins', desc: 'Enrolled in Computer Science & IT. Wrote my first real line of Node.js.' },
   { year: '2024', label: 'Building Real Things', desc: 'VibeSync, SnapSphere, ThinkBoard — MERN projects that live and breathe.' },
-  { year: '2025', label: 'Azure Certified', desc: 'Microsoft Azure AZ-900 certified. 170+ DSA problems. Still building.' },
+  { year: '2025', label: 'Azure Certified', desc: 'Microsoft Azure AZ-900 certified. Still building.' },
 ]
 
 export default function Story() {
@@ -34,12 +34,11 @@ export default function Story() {
           <p className="story-para reveal">
             My work lives at the intersection of backend precision and clean frontend experience.
             I architect systems with <strong>Node.js + Express</strong>, design data models in <strong>MongoDB</strong>,
-            build reactive UIs in <strong>React</strong>, and lock everything down with <strong>JWT + Redis</strong>.
+            build reactive UIs in <strong>React</strong>, and lock everything down with <strong>Industry Specific</strong>.
           </p>
           <p className="story-para reveal">
             I'm also a <strong>Microsoft Azure AZ-900</strong> certified cloud practitioner 
-            and a consistent DSA problem solver with <strong>170+ problems</strong> solved —
-            because great engineers don't just ship, they <em>think</em>.
+            and a consistent problem solver.
           </p>
 
           <div className="story-quote reveal">
@@ -68,8 +67,8 @@ export default function Story() {
       {/* Stat row */}
       <div className="story-stats stagger-parent">
         {[
-          { num: '3', unit: '+', label: 'MERN Projects Shipped' },
-          { num: '170', unit: '+', label: 'DSA Problems Solved' },
+          { num: '5', unit: '+', label: 'MERN Projects Shipped' },
+          { num: '10', unit: '+', label: 'Technologies Mastered' },
           { num: '1', unit: 'Cert', label: 'Azure AZ-900 Certified' },
           { num: '∞', unit: '', label: 'Drive to Keep Building' },
         ].map((s, i) => (

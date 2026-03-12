@@ -78,16 +78,16 @@ export default function Hero({ loaded }) {
           </div>
           <div className="hero-meta-item">
             <span className="meta-label">Stack</span>
-            <span className="meta-value">MERN · JWT · Redis</span>
+            <span className="meta-value">MERN · CLOUD</span>
           </div>
           <div className="hero-meta-item">
             <span className="meta-label">Certified</span>
             <span className="meta-value">Azure AZ-900</span>
           </div>
-          <div className="hero-meta-item">
+          {/* <div className="hero-meta-item">
             <span className="meta-label">DSA</span>
             <span className="meta-value meta-orange">170+ Problems</span>
-          </div>
+          </div> */}
         </div>
       </div>
 

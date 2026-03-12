@@ -6,7 +6,7 @@ import './Achievements.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-function CountUp({ end, suffix = '', decimals = 0 }) {
+function CountUp({ end, decimals = 0 }) {
   const numRef = useRef(null)
 
   useEffect(() => {
@@ -56,21 +56,21 @@ export default function Achievements() {
           <div className="ach-card-icon">☁</div>
           <h3 className="ach-title">Azure AZ-900</h3>
           <p className="ach-desc">
-            Certified in Microsoft Azure Fundamentals. Demonstrates mastery of cloud concepts, 
+            Certified in Microsoft Azure Fundamentals. Demonstrates mastery of cloud concepts,
             core Azure services, security, privacy, and pricing models.
           </p>
           <div className="ach-badge">Verified Certificate</div>
         </div>
 
         <div className="ach-card reveal-scale">
-          <div className="ach-card-tag">Data Structures & Algorithms</div>
+          <div className="ach-card-tag">Full Stack · MERN</div>
           <div className="ach-stat-num">
-            <CountUp end={170} />
+            <CountUp end={10} />
             <span className="ach-stat-plus">+</span>
           </div>
-          <h3 className="ach-title">DSA Problems Solved</h3>
+          <h3 className="ach-title">Technologies Mastered</h3>
           <p className="ach-desc">
-            Arrays, graphs, dynamic programming, trees — solved consistently to sharpen analytical thinking and system design instincts.
+            From React and Node.js to MongoDB, Redis, JWT, MediaPipe and ImageKit — each technology shipped inside a real, working application.
           </p>
         </div>
       </div>
