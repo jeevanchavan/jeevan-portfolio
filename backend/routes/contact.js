@@ -1,8 +1,8 @@
-const express = require('express');
-const { body, validationResult } = require('express-validator');
-const Contact = require('../models/Contact');
+import { Router } from 'express';
+import { body, validationResult } from 'express-validator';
+import Contact from '../models/Contact.js';
 
-const router = express.Router();
+const router = Router();
 
 // POST /api/contact
 router.post('/',
@@ -45,4 +45,4 @@ router.get('/', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

@@ -1,13 +1,22 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
-require('dotenv').config();
+import express, { json } from 'express';
+import { connect } from 'mongoose';
+import cors from 'cors';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
+import dotenv from 'dotenv'
 
-const contactRoutes = require('./routes/contact');
-const projectRoutes = require('./routes/projects');
-const skillRoutes = require('./routes/skills');
+import path from 'path'
+import { fileURLToPath } from "url";
+
+// It creates __dirname manually in ES modules.
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config()
+
+import contactRoutes from './routes/contact.js';
+import projectRoutes from './routes/projects.js';
+import skillRoutes from './routes/skills.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,7 +28,8 @@ app.use(cors({
   methods: ['GET', 'POST'],
   credentials: true
 }));
-app.use(express.json({ limit: '10kb' }));
+app.use(json({ limit: '10kb' }));
+app.use(express.static("./public"));
 
 // ── Rate limiting ──
 const limiter = rateLimit({
@@ -35,7 +45,7 @@ const contactLimiter = rateLimit({
 app.use('/api/', limiter);
 
 // ── MongoDB connection ──
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/jeevan-portfolio')
+connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/jeevan-portfolio')
   .then(() => console.log('✅  MongoDB connected'))
   .catch(err => console.error('❌  MongoDB error:', err));
 
@@ -65,6 +75,11 @@ app.use((err, req, res, next) => {
     error: err.message || 'Internal server error'
   });
 });
+
+// wildcard api
+app.use("*name",(req,res)=>{
+    res.sendFile(path.join(__dirname,"..","/public/index.html"));
+})
 
 app.listen(PORT, () => {
   console.log(`🚀  Server running on http://localhost:${PORT}`);

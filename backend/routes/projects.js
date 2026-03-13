@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+import { Router } from 'express';
+const router = Router();
 
 // Static data — in a real app, this would come from MongoDB
 const projects = [
@@ -81,4 +81,4 @@ router.get('/:id', (req, res) => {
   res.json({ success: true, data: project });
 });
 
-module.exports = router;
+export default router;

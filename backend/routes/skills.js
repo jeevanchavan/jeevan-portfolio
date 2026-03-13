@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+import { Router } from 'express';
+const router = Router();
 
 const skills = {
   frontend: {
@@ -33,4 +33,4 @@ router.get('/', (req, res) => {
   res.json({ success: true, data: skills });
 });
 
-module.exports = router;
+export default router;

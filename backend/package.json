@@ -1,5 +1,6 @@
 {
   "name": "jeevan-portfolio-backend",
+  "type": "module",
   "version": "1.0.0",
   "description": "Jeevan Vijay Chavan Portfolio Backend — MERN Stack",
   "main": "server.js",
